@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {connect} from 'react-redux';
 import "./UserManager.scss"
-import {getAllUsers} from "../../services/userService";
+import {createUser, deleteUser, getAllUsers} from "../../services/userService";
+import {emitter} from "../../utils/emitter";
 import ModalUser from "./ModalUser";
 
 class UserManage extends Component {
@@ -17,6 +18,10 @@ class UserManage extends Component {
 
 
     async componentDidMount() {
+       await this.getAllUsers()
+    }
+
+    getAllUsers = async () => {
         const res = await getAllUsers("ALL")
         if (res && res.errCode === 0) {
             this.setState({
@@ -24,7 +29,6 @@ class UserManage extends Component {
             })
         }
     }
-
     handleAddNewUser = () => {
         this.setState({
             isOpenModal: true
@@ -37,12 +41,45 @@ class UserManage extends Component {
         })
     }
 
+    createUser = async (data) => {
+        try {
+            const res = await createUser(data)
+            if(res && res.errCode) {
+                alert(res.message)
+            }
+            else {
+                await this.getAllUsers()
+                this.setState({
+                    isOpenModal: false
+                })
+                emitter.emit('EVENT_CLEAR_MODAL_DATA')
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    handleDeleteUser = async (user) => {
+        try {
+            const res = await deleteUser(user.id)
+            if(res && !res.errCode) {
+               await this.getAllUsers()
+            }
+            else {
+                alert(res.message)
+            }
+        }catch (e) {
+            console.log(e)
+        }
+    }
+
 
     render() {
         const {arrUsers} = this.state
         return (
             <div className="users-container">
-                <ModalUser isOpen={this.state.isOpenModal} toggleFromParent={this.toggleUserModal}/>
+                <ModalUser isOpen={this.state.isOpenModal} toggleFromParent={this.toggleUserModal}
+                           createUser={this.createUser}/>
                 <div className="title text-center">Manage users with Quang Thuan</div>
                 <div className="mx-4">
                     <button className="btn btn-primary px-3" onClick={() => this.handleAddNewUser()}><i
@@ -68,7 +105,7 @@ class UserManage extends Component {
                                     <td>{item.address}</td>
                                     <td>
                                         <button className="btn-edit"><i className="fas fa-pencil-alt"/></button>
-                                        <button className="btn-delete"><i className="fas fa-trash"/></button>
+                                        <button className="btn-delete" onClick={() => this.handleDeleteUser(item)}><i className="fas fa-trash"/></button>
                                     </td>
                                 </tr>
                             )
