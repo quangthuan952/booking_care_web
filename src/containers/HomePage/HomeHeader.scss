@@ -56,8 +56,10 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
+
       .support {
         cursor: pointer;
+
         i {
           color: #3b5998;
           font-size: 18px;
@@ -71,5 +73,102 @@
       }
 
     }
+  }
+}
+
+.home-header-banner {
+  background-image: url("../../assets/images/header_background.jpg");
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 628px;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+
+  .content-up {
+    height: 50%;
+
+    .title-1 {
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 300;
+      color: white;
+      text-shadow: 1px 1px 1px #333;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .title-2 {
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 600;
+      color: white;
+      text-shadow: 1px 1px 1px #333;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      width: 400px;
+      border-radius: 25px;
+      background-color: #f7d800;
+      margin: 20px auto;
+
+      input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        width: 400px;
+      }
+
+      i {
+        margin: 0 5px;
+      }
+    }
+
+  }
+
+  .content-down {
+    height: 50%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+    padding-top: 30px;
+    padding-bottom: 20px;
+
+    .option-list {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      justify-content: center;
+
+      .option-item {
+        cursor: pointer;
+        width: 150px;
+        height: 112px;
+        display: block;
+        &:hover {
+          color: #2fc0d7;
+        }
+        i {
+          font-size: 25px;
+          width: 50px;
+          height: 50px;
+          color: #2fc0d7;
+          background-color: #fff;
+          border-radius: 50%;
+          line-height: 50px;
+        }
+
+        .option-item-title {
+          font-size: 17px;
+          font-weight: 600;
+        }
+      }
+    }
+
+
   }
 }
