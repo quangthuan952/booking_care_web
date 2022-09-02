@@ -16,15 +16,16 @@
       justify-content: center;
 
       .icon-bar {
-        font-size: 25px;
+        font-size: 20px;
         color: gray;
         cursor: pointer;
+        padding-right: 10px;
       }
 
       .header-logo {
         background: url("../../assets/images/logo.svg") center center no-repeat;
-        height: 60%;
-        width: 70%;
+        height: 50%;
+        width: 50%;
         cursor: pointer;
       }
     }
@@ -54,31 +55,43 @@
       width: 25%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       gap: 20px;
 
       .support {
         cursor: pointer;
-
+        padding-right: 30px;
         i {
           color: #3b5998;
-          font-size: 18px;
+          font-size: 15px;
+          margin-right: 5px;
         }
 
-        div {
+        span {
           font-weight: 600;
-          padding-left: 2px;
           color: gray;
         }
       }
-
+      .language-vi {
+        cursor: pointer;
+        &.active {
+          color: green;
+        }
+      }
+      .language-en {
+        margin: 0 10px;
+        cursor: pointer;
+        &.active {
+          color: green;
+        }
+      }
     }
   }
 }
 
 .home-header-banner {
-  background-image: url("../../assets/images/header_background.jpg");
-  background-color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.25),rgba(255, 255, 255, 0.1)), url("../../assets/images/header_background.jpg");
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -89,7 +102,6 @@
 
   .content-up {
     height: 50%;
-
     .title-1 {
       text-transform: uppercase;
       font-size: 30px;

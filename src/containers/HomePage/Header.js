@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import "./HomeHeader.scss"
+import { FormattedMessage } from 'react-intl';
 
 class Header extends Component {
 
@@ -14,32 +15,33 @@ class Header extends Component {
                     <div className="home-header-content">
                         <div className="left-content">
                             <i className="fas fa-bars icon-bar"/>
-                            <div className="header-logo"></div>
+                            <div className="header-logo"/>
                         </div>
                         <div className="center-content">
                             <div className="child-content">
-                                <div className="child-content-header">Chuyên khoa</div>
-                                <div className="child-content-description">Tìm bác sĩ theo chuyên khoa</div>
+                                <div className="child-content-header"><FormattedMessage id="homeHeader.specialty"/></div>
+                                <div className="child-content-description"><FormattedMessage id="homeHeader.findDoctor"/></div>
                             </div>
                             <div className="child-content">
-                                <div className="child-content-header">Cơ sở y tế</div>
-                                <div className="child-content-description">Chọn bệnh viện phòng khám</div>
+                                <div className="child-content-header"><FormattedMessage id="homeHeader.healthFacilities"/></div>
+                                <div className="child-content-description"><FormattedMessage id="homeHeader.chooseHospitalClinic"/></div>
                             </div>
                             <div className="child-content">
-                                <div className="child-content-header">Bác sĩ</div>
-                                <div className="child-content-description">Chọn bác sĩ giỏi</div>
+                                <div className="child-content-header"><FormattedMessage id="homeHeader.doctor"/></div>
+                                <div className="child-content-description"><FormattedMessage id="homeHeader.chooseDoctor"/></div>
                             </div>
                             <div className="child-content">
-                                <div className="child-content-header">Gói khám</div>
-                                <div className="child-content-description">Khám sức khỏe tổng quát</div>
+                                <div className="child-content-header"><FormattedMessage id="homeHeader.examinationPackage"/></div>
+                                <div className="child-content-description"><FormattedMessage id="homeHeader.generalHealthCheck"/></div>
                             </div>
                         </div>
                         <div className="right-content">
                             <div className="support">
                                 <i className="fas fa-question-circle"/>
-                                Hỗ trợ
+                                <span><FormattedMessage id="homeHeader.support"/></span>
                             </div>
-                            <div className="flag">VN</div>
+                            <div className="language-vi"><FormattedMessage id="homeHeader.vn"/></div>
+                            <div className="language-en"><FormattedMessage id="homeHeader.en"/></div>
                         </div>
                     </div>
                 </div>
@@ -53,32 +55,32 @@ class Header extends Component {
                         </div>
                     </div>
                     <div className="content-down">
-                       <ul className="option-list">
-                           <li className="option-item">
-                               <i className="fas fa-hospital"/>
-                              <div className="option-item-title">Khám Chuyên khoa</div>
-                           </li>
-                           <li className="option-item">
-                               <i className="fas fa-mobile-alt"/>
-                               <div className="option-item-title">Khám từ xa</div>
-                           </li>
-                           <li className="option-item">
-                               <i className="fas fa-procedures"/>
-                               <div className="option-item-title">Xét nghiệm y học</div>
-                           </li>
-                           <li className="option-item">
-                               <i className="fas fa-stethoscope"/>
-                               <div className="option-item-title">Khám tổng quát</div>
-                           </li>
-                           <li className="option-item">
-                               <i className="fas fa-hospital"/>
-                               <div className="option-item-title">Sức khỏe tinh thần</div>
-                           </li>
-                           <li className="option-item">
-                               <i className="fas fa-briefcase-medical"/>
-                               <div className="option-item-title">Sản phẩm y tế</div>
-                           </li>
-                       </ul>
+                        <ul className="option-list">
+                            <li className="option-item">
+                                <i className="fas fa-hospital"/>
+                                <div className="option-item-title">Khám Chuyên khoa</div>
+                            </li>
+                            <li className="option-item">
+                                <i className="fas fa-mobile-alt"/>
+                                <div className="option-item-title">Khám từ xa</div>
+                            </li>
+                            <li className="option-item">
+                                <i className="fas fa-procedures"/>
+                                <div className="option-item-title">Xét nghiệm y học</div>
+                            </li>
+                            <li className="option-item">
+                                <i className="fas fa-stethoscope"/>
+                                <div className="option-item-title">Khám tổng quát</div>
+                            </li>
+                            <li className="option-item">
+                                <i className="fas fa-user-md"/>
+                                <div className="option-item-title">Sức khỏe tinh thần</div>
+                            </li>
+                            <li className="option-item">
+                                <i className="fas fa-briefcase-medical"/>
+                                <div className="option-item-title">Sản phẩm y tế</div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </React.Fragment>
@@ -89,7 +91,8 @@ class Header extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        language: state.app.language
     };
 };
 

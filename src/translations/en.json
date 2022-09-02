@@ -116,5 +116,18 @@
             "remove-assign-fail": "Fail to unassign service package to customer",
             "sure-delete-assign": "Are you sure to unassign service package to customer?"
         }
+    },
+    "homeHeader": {
+        "specialty": "Medical specialty",
+        "findDoctor": "Find a doctor by specialty",
+        "healthFacilities": "Health facilities",
+        "chooseHospitalClinic": "Choose hospital clinic",
+        "doctor": "Doctor",
+        "chooseDoctor": "Choose a good doctor",
+        "examinationPackage": "Examination package",
+        "generalHealthCheck": "General health check",
+        "support": "Support",
+        "vn": "Vietnamese",
+        "en": "English"
     }
 }
