@@ -130,6 +130,15 @@
         "support": "Hỗ trợ",
         "vn": "Tiếng Việt",
         "en": "Tiếng Anh"
-
+    },
+    "banner": {
+        "medicalBackground": "nền tảng y tế",
+        "comprehensiveHealthCare": "chăm sóc sức khỏe toàn diện",
+        "specialistExamination": "Khám Chuyên khoa",
+        "remoteExamination": "Khám từ xa",
+        "medicalTest": "Xét nghiệm y học",
+        "generalExamination": "Khám tổng quát",
+        "mentalHealth": "Sức khỏe tinh thần",
+        "medicalProducts": "Sản phẩm y tế"
     }
 }

@@ -129,5 +129,15 @@
         "support": "Support",
         "vn": "Vietnamese",
         "en": "English"
+    },
+    "banner": {
+        "medicalBackground": "Medical background",
+        "comprehensiveHealthCare": "Comprehensive health care",
+        "specialistExamination": "Specialist examination",
+        "remoteExamination": "Remote examination",
+        "medicalTest": "Medical test",
+        "generalExamination": "General examination",
+        "mentalHealth": "Mental health",
+        "medicalProducts": "Medical products"
     }
 }
