@@ -108,4 +108,18 @@
     }
   }
 
+  .section-about {
+    padding: 0 14px;
+    display: flex;
+    gap: 20px;
+    .video {
+      width: 60%;
+    }
+    .content-right {
+      width: 40%;
+      text-align: justify;
+      font-style: italic;
+    }
+  }
+
 }

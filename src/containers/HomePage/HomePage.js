@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import HeaderHome from "./Header"
-import Specialty from "./Secction/Specialty";
-import MedicalFacility from "./Secction/MedicalFacility";
-import OutstandingDoctor from "./Secction/OutstandingDoctor";
-import Handbook from "./Secction/Handbook";
+import Specialty from "./Section/Specialty";
+import MedicalFacility from "./Section/MedicalFacility";
+import OutstandingDoctor from "./Section/OutstandingDoctor";
+import Handbook from "./Section/Handbook";
+import About from "./Section/About";
 
 class HomePage extends Component {
 
@@ -18,6 +19,7 @@ class HomePage extends Component {
                 <MedicalFacility />
                 <OutstandingDoctor />
                 <Handbook />
+                <About />
                 <div style={{height: '300px'}}></div>
             </div>
         );

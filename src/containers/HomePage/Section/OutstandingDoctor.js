@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import "./Specialty.scss"
+import "./Section.scss"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,18 +11,19 @@ import section_4 from "../../../assets/images/section_4.jpg"
 import section_5 from "../../../assets/images/section_5.jpg"
 import section_6 from "../../../assets/images/section_6.jpg"
 import {FormattedMessage} from "react-intl";
-class Handbook extends Component {
+
+class OutstandingDoctor extends Component {
     constructor(props) {
         super(props);
         this.state = {
             arrSection: [
                 {
                     img: section_1,
-                    title: 'Chương trình ưu đãi tháng 9 tại Phòng khám Mediplus'
+                    title: 'Sản phụ khoa'
                 },
                 {
                     img: section_2,
-                    title: '5 Địa chỉ xét nghiệm máu tổng quát tốt và uy tín tại Hà Nội'
+                    title: 'Siêu âm thai'
                 },
                 {
                     img: section_3,
@@ -48,7 +49,7 @@ class Handbook extends Component {
         const settings = {
             dots: false,
             infinite: true,
-            slidesToShow: 2,
+            slidesToShow: 4,
             slidesToScroll: 1,
             cssEase: "linear"
         };
@@ -57,17 +58,20 @@ class Handbook extends Component {
                 <div className="section-specialty">
                     <div className="section-content">
                         <div className="section-header">
-                            <span className="title-section"><FormattedMessage id="section.handbook"/></span>
-                            <div className="btn-section"><FormattedMessage id="section.search"/></div>
+                            <span className="title-section"><FormattedMessage id="section.outstandingDoctor"/></span>
+                            <div className="btn-section"><FormattedMessage id="section.seeMore"/></div>
                         </div>
                         <Slider {...settings}>
                             {this.state.arrSection.map((item, index) => {
                                 return (
-                                    <div className="section-item" key={index}>
-                                        <div className="section-item-handbook">
-                                            <img className="thumbnail-handbook" alt="" src={item.img} style={{height: '150px'}}/>
-                                            <div className="py-2 title-handbook">{item.title}</div>
-                                        </div>
+                                    <div className="section-item-carousel" key={index}>
+                                       <div className="section-item-doctor" style={{border: '1px solid #eee'}}>
+                                           <img alt="" className="avt-doctor" src={item.img} style={{height: '120px', width: '120px'}}/>
+                                         <div className="py-2">
+                                             <div className="doctor-name">Bác sĩ Chuyên khoa II Trần Minh Khuyên</div>
+                                             <div className="doctor-position">Da liễu</div>
+                                         </div>
+                                       </div>
                                     </div>
                                 )
                             })}
@@ -88,4 +92,4 @@ const mapDispatchToProps = dispatch => {
     return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Handbook);
+export default connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor);

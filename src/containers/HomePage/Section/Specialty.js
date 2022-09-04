@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import "./Specialty.scss"
+import "./Section.scss"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,7 +12,7 @@ import section_5 from "../../../assets/images/section_5.jpg"
 import section_6 from "../../../assets/images/section_6.jpg"
 import {FormattedMessage} from "react-intl";
 
-class OutstandingDoctor extends Component {
+class Specialty extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -58,19 +58,16 @@ class OutstandingDoctor extends Component {
                 <div className="section-specialty">
                     <div className="section-content">
                         <div className="section-header">
-                            <span className="title-section"><FormattedMessage id="section.outstandingDoctor"/></span>
+                            <span className="title-section"><FormattedMessage id="section.popularSpecialty"/></span>
                             <div className="btn-section"><FormattedMessage id="section.seeMore"/></div>
                         </div>
                         <Slider {...settings}>
                             {this.state.arrSection.map((item, index) => {
                                 return (
                                     <div className="section-item-carousel" key={index}>
-                                       <div className="section-item-doctor" style={{border: '1px solid #eee'}}>
-                                           <img alt="" className="avt-doctor" src={item.img} style={{height: '120px', width: '120px'}}/>
-                                         <div className="py-2">
-                                             <div className="doctor-name">Bác sĩ Chuyên khoa II Trần Minh Khuyên</div>
-                                             <div className="doctor-position">Da liễu</div>
-                                         </div>
+                                       <div className="section-item-doctor">
+                                           <img alt="" src={item.img} style={{height: '160px', width: '296px'}}/>
+                                           <div className="py-2">{item.title}</div>
                                        </div>
                                     </div>
                                 )
@@ -92,4 +89,4 @@ const mapDispatchToProps = dispatch => {
     return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor);
+export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
