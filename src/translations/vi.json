@@ -140,5 +140,19 @@
         "generalExamination": "Khám tổng quát",
         "mentalHealth": "Sức khỏe tinh thần",
         "medicalProducts": "Sản phẩm y tế"
+    },
+    "section": {
+        "popularSpecialty": "Chuyên khoa phổ biến",
+        "seeMore": "Xem thêm",
+        "outstandingMedicalFacility": "Cơ sở y tế nổi bật",
+        "facilityName1": "Bệnh viện Hữu nghị Việt Đức",
+        "facilityName2": "Bệnh viện Chợ Rẫy",
+        "facilityName3": "Bệnh viện Bạch Mai",
+        "facilityName4": "Phòng khám đa khoa 103",
+        "facilityName5": "Bệnh viện Quân đội 108",
+        "facilityName6": "Bệnh viện tư nhân Hồng Ngọc",
+        "search": "Tìm kiếm",
+        "outstandingDoctor": "Bác sĩ nổi bật tuần qua",
+        "handbook": "Cẩm nang"
     }
 }

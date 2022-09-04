@@ -139,5 +139,19 @@
         "generalExamination": "General examination",
         "mentalHealth": "Mental health",
         "medicalProducts": "Medical products"
+    },
+    "section": {
+        "popularSpecialty": "Popular specialty",
+        "seeMore": "See more",
+        "outstandingMedicalFacility": "Cơ sở y tế nổi bật",
+        "facilityName1": "Viet Duc friendship hospital",
+        "facilityName2": "Cho Ray hospital",
+        "facilityName3": "Bach Mai hospital",
+        "facilityName4": "Military Hospital 103",
+        "facilityName5": "Military Hospital 108",
+        "facilityName6": "Hong Ngoc Hospital",
+        "search": "Search",
+        "outstandingDoctor": "Outstanding doctor",
+        "handbook": "Handbook"
     }
 }

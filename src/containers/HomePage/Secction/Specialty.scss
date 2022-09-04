@@ -1,0 +1,111 @@
+.section-specialty {
+  padding: 30px 0;
+  background-color: #f5f5f5;
+  margin-bottom: 3px;
+
+  .section-content {
+    width: 90%;
+    margin: auto
+  }
+
+  .slick-prev {
+    left: -10px !important;
+    z-index: 2;
+    color: gray !important;
+  }
+
+  .slick-next {
+    right: 0 !important;
+    z-index: 2;
+    color: gray !important;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: gray !important;
+
+  }
+
+  .slick-next {
+    right: 0 !important;
+    z-index: 1;
+    color: gray !important;
+  }
+
+  .section-item-carousel {
+    cursor: pointer;
+
+    &:hover {
+      color: #2fc0d7
+    }
+  }
+
+  .section-header {
+    padding: 20px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title-section {
+      font-weight: 600;
+      font-size: 26px;
+    }
+
+    .btn-section {
+      padding: 10px;
+      background-color: #ebebeb;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 12px;
+
+      &:hover {
+        background-color: #f7d800;
+        color: white;
+      }
+    }
+  }
+
+  .avt-doctor {
+    border-radius: 50%;
+  }
+
+  .section-item-doctor {
+    text-align: center;
+    padding-bottom: 10px;
+    margin-right: 10px;
+
+    img {
+      margin: 0 auto;
+      object-fit: cover;
+    }
+  }
+
+  .doctor-name {
+    color: #111;
+    white-space: pre-wrap;
+    font-size: 13px;
+  }
+
+  .doctor-position {
+    color: #555;
+    font-size: 12px;
+  }
+
+  .section-item-handbook {
+    margin-right: 10px;
+    display: flex;
+
+    .thumbnail-handbook {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    .title-handbook {
+      width: 50%;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 15px;
+      padding: 0 10px;
+    }
+  }
+
+}
