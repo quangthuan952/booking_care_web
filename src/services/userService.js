@@ -9,7 +9,7 @@ const getAllUsers = (id) => {
 
 }
 
-const createUser = (data) => {
+const createUserService = (data) => {
     return axios.post(`/api/create-new-user`, data)
 }
 
@@ -24,4 +24,5 @@ const deleteUser = (id) => {
 const getAllCodeService = (type) => {
     return axios.get(`/api/allCode?type=${type}`)
 }
-export {handleLogin, getAllUsers, createUser, deleteUser, editUser, getAllCodeService}
+
+export {handleLogin, getAllUsers, createUserService, deleteUser, editUser, getAllCodeService,}
