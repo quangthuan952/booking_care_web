@@ -61,5 +61,18 @@
         "search": "Tìm kiếm",
         "outstandingDoctor": "Bác sĩ nổi bật tuần qua",
         "handbook": "Cẩm nang"
+    },
+    "manage-user": {
+        "add": "Thêm mới người dùng",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "first-name": "Tên",
+        "last-name": "Họ",
+        "address": "Địa chỉ",
+        "phone-number": "Số điện thoại",
+        "gender": "Giới tính",
+        "position": "Vị trí",
+        "role": "Vai trò",
+        "image": "Ảnh"
     }
 }

@@ -20,4 +20,8 @@ const editUser = (data) => {
 const deleteUser = (id) => {
     return axios.post(`/api/delete-user?id=${id}`)
 }
-export {handleLogin, getAllUsers, createUser, deleteUser, editUser}
+
+const getAllCodeService = (type) => {
+    return axios.get(`/api/allCode?type=${type}`)
+}
+export {handleLogin, getAllUsers, createUser, deleteUser, editUser, getAllCodeService}

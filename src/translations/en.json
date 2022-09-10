@@ -61,5 +61,18 @@
         "search": "Search",
         "outstandingDoctor": "Outstanding doctor",
         "handbook": "Handbook"
+    },
+    "manage-user": {
+        "add": "Add new user",
+        "email": "Email",
+        "password": "Password",
+        "first-name": "First name",
+        "last-name": "Last name",
+        "address": "Address",
+        "phone-number": "Phone number",
+        "gender": "Gender",
+        "position": "Position",
+        "role": "Role",
+        "image": "Image"
     }
 }
