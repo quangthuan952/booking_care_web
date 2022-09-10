@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {connect} from 'react-redux';
-import {getAllCodeService} from "../../../services/userService";
 import {LANGUAGES} from "../../../utils";
-
+import * as actions from "../../../store/actions/index"
 class UserRedux extends Component {
     constructor(props) {
         super(props);
@@ -13,21 +12,20 @@ class UserRedux extends Component {
     }
 
     async componentDidMount() {
-        try {
-            const {data} = await getAllCodeService("gender")
-            if (data) {
-                this.setState({
-                    genderArr: data
-                })
-            }
-        } catch (e) {
+        this.props.getGenderStart()
+    }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.genders !== this.props.genders) {
+             this.setState({
+                 genderArr: this.props.genders
+             })
         }
     }
 
 
     render() {
-        const {language} = this.props
+        const {language, genders} = this.props
         return (
             <div className="user-redux-container">
                 <div className="title">
@@ -65,7 +63,7 @@ class UserRedux extends Component {
                                 <label><FormattedMessage id="manage-user.gender"/></label>
                                 <select className="form-control">
                                     {this.state.genderArr.length &&
-                                        this.state.genderArr.map((item, index) => {
+                                        genders.map((item, index) => {
                                             return (
                                                 <option
                                                     key={index}>{LANGUAGES.VI === language ? item.valueVi : item.valueEn}</option>
@@ -96,7 +94,7 @@ class UserRedux extends Component {
                                 <label><FormattedMessage id="manage-user.image"/></label>
                                 <input type="text" className="form-control"/>
                             </div>
-                            <div className="col-12">
+                            <div className="col-12 mt-3">
                                 <button className="btn btn-primary">Save</button>
                             </div>
                         </div>
@@ -110,12 +108,15 @@ class UserRedux extends Component {
 
 const mapStateToProps = state => {
     return {
-        language: state.app.language
+        language: state.app.language,
+        genders: state.admin.genders
     };
 };
 
 const mapDispatchToProps = dispatch => {
-    return {};
+    return {
+        getGenderStart: () => dispatch(actions.fetchGenderStart())
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserRedux);
