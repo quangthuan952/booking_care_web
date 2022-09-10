@@ -5,7 +5,7 @@ import {push} from "connected-react-router";
 import {handleLogin} from "../../services/userService";
 import "./Login.scss"
 import * as actions from "../../store/actions";
-
+import {userLoginSuccess} from "../../store/actions/userActions"
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -115,7 +115,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         navigate: (path) => dispatch(push(path)),
-        userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo))
+        userLoginSuccess: (userInfo) => dispatch(userLoginSuccess(userInfo))
     };
 };
 
